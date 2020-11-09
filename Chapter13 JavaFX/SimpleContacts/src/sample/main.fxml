@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainPanel" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <top>
+        <MenuBar>
+            <Menu text="Contacts...">
+                <MenuItem onAction="#showAddContactDialog" text="Add Contact..." />
+                <MenuItem onAction="#showEditContact" text="Edit Contact..." />
+                <MenuItem onAction="#handleDeleteContact" text="Delete Contact..." />
+                <SeparatorMenuItem />
+                <MenuItem onAction="#handleExit" text="Exit" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+   <center>
+            <TableView fx:id="contactsTable">
+              <columns>
+                <TableColumn prefWidth="75.0" text="First Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Last Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName" />
+                    </cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Phone Number">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="phoneNumber" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Notes">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="notes" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+            </TableView>
+   </center>
+
+</BorderPane>
